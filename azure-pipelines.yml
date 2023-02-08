@@ -2,13 +2,13 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
+pool: Linux
+
 trigger:
 - master
 
 resources:
 - repo: self
-
-pool: Linux
   
 variables:
   tag: '$(Build.BuildId)'
