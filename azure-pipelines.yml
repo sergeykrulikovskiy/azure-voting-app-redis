@@ -32,9 +32,11 @@ stages:
         dockerComposeFile: 'docker-compose.yaml'
         action: 'Build services'
         additionalImageTags: 'latest'
-    - task: Docker@2
+
+    - task: DockerCompose@0
       inputs:
-        containerRegistry: 'ksv-docker-hub'
-        repository: 'sergeykrulikovskiy/ksv-registry'
-        command: 'push'
-        tags: 'latest'
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'ksv-docker-hub'
+        dockerComposeFile: 'docker-compose.yaml'
+        action: 'Push services'
+        additionalImageTags: 'latest'
