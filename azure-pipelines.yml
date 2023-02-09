@@ -25,9 +25,9 @@ stages:
       inputs:
         containerRegistry: 'ksv-docker-hub'
         command: 'login'
-    - task: DockerCompose@0
+    - task: Docker@2
       inputs:
-        containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: 'ksv-docker-hub'
-        dockerComposeFile: 'docker-compose.yaml'
-        action: 'Push services'
+        containerRegistry: 'ksv-docker-hub'
+        repository: 'azure-voting'
+        command: 'buildAndPush'
+        Dockerfile: '/azure-vote/Dockerfile'
