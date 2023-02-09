@@ -30,4 +30,4 @@ stages:
         containerRegistry: 'ksv-docker-hub'
         repository: 'azure-voting'
         command: 'buildAndPush'
-        Dockerfile: '/azure-vote/Dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
