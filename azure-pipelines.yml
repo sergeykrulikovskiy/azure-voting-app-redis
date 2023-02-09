@@ -28,6 +28,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ksv-docker-hub'
-        repository: 'azure-voting'
+        repository: 'sergeykrulikovskiy/azure-voting'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
