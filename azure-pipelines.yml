@@ -37,4 +37,4 @@ stages:
         containerRegistry: 'ksv-docker-hub'
         repository: 'sergeykrulikovskiy/ksv-registry'
         command: 'push'
-        tags: 'mcr.microsoft.com/azuredocs/azure-vote-front:latest'
+        tags: 'latest'
