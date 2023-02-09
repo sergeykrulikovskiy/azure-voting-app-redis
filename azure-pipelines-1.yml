@@ -1,0 +1,19 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: Linux
+
+steps:
+  - task: KubernetesManifest@0
+    displayName: Deploy to ASK
+    inputs:
+      action: deploy
+      kubernetesServiceConnection:
+      manifests: $(Build.SourcesDirectory)\azure-vote-all-in-one-redis.yaml
+      namespace: azure-vote-test
+
