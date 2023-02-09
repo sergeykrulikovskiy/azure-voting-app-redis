@@ -13,7 +13,7 @@ steps:
     displayName: Deploy to ASK
     inputs:
       action: deploy
-      kubernetesServiceConnection:
+      kubernetesServiceConnection: azure-vote
       manifests: $(Build.SourcesDirectory)\azure-vote-all-in-one-redis.yaml
       namespace: azure-vote-test
 
