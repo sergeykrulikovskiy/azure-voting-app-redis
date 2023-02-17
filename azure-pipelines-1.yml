@@ -15,5 +15,5 @@ steps:
       action: deploy
       kubernetesServiceConnection: ksv-aks-test-withsp-namespace1
       manifests: $(Build.SourcesDirectory)/azure-vote-all-in-one-redis.yaml
-      namespace: azure-vote-test
+      namespace: namespace1
 
