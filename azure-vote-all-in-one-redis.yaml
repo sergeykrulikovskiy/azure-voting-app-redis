@@ -27,8 +27,8 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: image-registry
-  namespace: default
+  name: cpu-autoscale
+  namespace: namespace1
 spec:
   maxReplicas: 3
   minReplicas: 1
