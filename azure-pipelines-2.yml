@@ -1,0 +1,20 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger: none
+
+pool: Linux
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+steps:
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'ksv-docker-hub'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run services'
