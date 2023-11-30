@@ -2,10 +2,9 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-pool: Linux
+pool: centos
 
-trigger:
-- master
+trigger: none
 
 resources:
 - repo: self
@@ -23,11 +22,11 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'ksv-docker-hub'
+        containerRegistry: 'docker-hub-ksv'
         command: 'login'
     - task: Docker@2
       inputs:
-        containerRegistry: 'ksv-docker-hub'
+        containerRegistry: 'docker-hub-ksv'
         repository: 'sergeykrulikovskiy/azure-voting'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
